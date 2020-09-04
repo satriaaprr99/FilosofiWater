@@ -2,6 +2,7 @@ package narsis.xiirpl2.filosofiwater;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -66,6 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
                         JSONObject jsonObject = new JSONObject(response);
                         String success = jsonObject.getString("success");
                         if(success.equals("1")){
+                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                             Toast.makeText(RegisterActivity.this, "Registrasi Berhasil ", Toast.LENGTH_SHORT).show();
                         }
 

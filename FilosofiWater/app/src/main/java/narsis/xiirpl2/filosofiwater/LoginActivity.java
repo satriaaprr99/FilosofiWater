@@ -91,11 +91,15 @@ public class LoginActivity extends AppCompatActivity {
                                     String nama = object.getString("nama").trim();
                                     String nohp = object.getString("nohp").trim();
 
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(intent);
+
                                     Toast.makeText(LoginActivity.this,
                                             "Login Berhasil \n Nama : "
                                                     +nama+ "\n Nohp : "
                                                     +nohp , Toast.LENGTH_SHORT)
                                             .show();
+
                                     loading.setVisibility(View.GONE);
 
                                 }

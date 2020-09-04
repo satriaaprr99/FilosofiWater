@@ -6,4 +6,6 @@
     <color name="colorText">#000000</color>
     <color name="colorPrimary2">#3AA9FF</color>
     <color name="colorPrimaryDark2">#05444C</color>
+    <color name="colorNavIcon">#dae9f6</color>
+    <color name="colorNavText">#01294b</color>
 </resources>
