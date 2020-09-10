@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -27,6 +28,7 @@ import java.util.Map;
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText nama, nohp, password, confirmpassword;
+    private TextView layout_login;
     private Button btn_regist;
     private ProgressBar loading;
     private static String URL_REGIST = "http://192.168.1.14/AndroidFilosofiWater/register.php";
@@ -42,6 +44,14 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         confirmpassword = findViewById(R.id.confirmpassword);
         btn_regist = findViewById(R.id.btn_regist);
+        layout_login = findViewById(R.id.layout_login);
+
+        layout_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+            }
+        });
 
         btn_regist.setOnClickListener(new View.OnClickListener() {
             @Override

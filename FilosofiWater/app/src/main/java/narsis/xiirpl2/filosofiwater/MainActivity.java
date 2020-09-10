@@ -1,7 +1,9 @@
 package narsis.xiirpl2.filosofiwater;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -21,6 +23,9 @@ import narsis.xiirpl2.filosofiwater.ui.shop.ShopFragment;
 
 public class MainActivity extends AppCompatActivity implements
         BottomNavigationView.OnNavigationItemSelectedListener {
+
+    private TextView nama, nohp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +34,9 @@ public class MainActivity extends AppCompatActivity implements
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
+
+        nama = findViewById(R.id.nama);
+        nohp = findViewById(R.id.nohp);
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -52,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements
         }
         return loadFragment(fragment);
     }
+
     private boolean loadFragment(Fragment fragment) {
         if (fragment != null) {
             getSupportFragmentManager()

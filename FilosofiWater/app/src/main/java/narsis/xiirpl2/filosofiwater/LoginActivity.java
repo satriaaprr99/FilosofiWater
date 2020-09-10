@@ -26,11 +26,13 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import narsis.xiirpl2.filosofiwater.ui.profile.ProfileFragment;
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText nohp, password;
     private Button btn_login;
-    private TextView layout_register;
+    private TextView layout_register, txtlogin;
     private ProgressBar loading;
     private static String URL_REGIST = "http://192.168.1.14/AndroidFilosofiWater/login.php";
 
@@ -38,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        txtlogin.setFontFeatureSettings("Montserrat-Black.ttf");
 
         loading = findViewById(R.id.loading);
         nohp = findViewById(R.id.nohp);
@@ -92,12 +96,12 @@ public class LoginActivity extends AppCompatActivity {
                                     String nohp = object.getString("nohp").trim();
 
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    intent.putExtra("nama", nama);
+                                    intent.putExtra("nohp", nohp);
                                     startActivity(intent);
 
                                     Toast.makeText(LoginActivity.this,
-                                            "Login Berhasil \n Nama : "
-                                                    +nama+ "\n Nohp : "
-                                                    +nohp , Toast.LENGTH_SHORT)
+                                            "Login Berhasil \n Selamat Datang di Filosofi Water" , Toast.LENGTH_SHORT)
                                             .show();
 
                                     loading.setVisibility(View.GONE);

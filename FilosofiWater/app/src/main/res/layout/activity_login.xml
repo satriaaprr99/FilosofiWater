@@ -9,10 +9,10 @@
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
     android:paddingTop="150dp"
-    android:background="@color/colorPrimary2"
     tools:context=".LoginActivity">
 
     <TextView
+        android:id="@+id/txtlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -22,6 +22,7 @@
 
 
     <LinearLayout
+        android:background="@drawable/custom_layout"
         android:layout_width="300dp"
         android:layout_height="350dp"
         android:orientation="vertical"
@@ -75,12 +76,13 @@
 
         <Button
             android:id="@+id/btn_login"
+            android:background="@drawable/custom_button"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:backgroundTint="@color/colorAccent"
-            android:text="Login"/>
+            android:text="Login"
+            android:textColor="#FFFFFF"/>
 
     </LinearLayout>
 
